@@ -1,6 +1,21 @@
 import requests
 import json
-from config import mail, password, auth_url
+from config import auth_url
+import os
+
+if __name__ == '__main__':
+    password = 'string'
+    mail = 'string'
+    print('Setup \n input your e-mail from anilibria account')
+    input(mail + ':')
+    print('input your password from anilibria account')
+    input(password + ':')
+
+    os.environ['AUTH_MAIL'] = mail
+    os.environ['AUTH_PASSWORD'] = password
+
+mail = os.environ['AUTH_MAIL']
+password = os.environ['AUTH_PASSWORD']
 
 
 def connect():
@@ -9,8 +24,6 @@ def connect():
         f.readline()
         auth_cookie = f.readline()
         f.close()
-        print('auth_cookie ' + auth_cookie)
-
         response = requests.request("POST", url=auth_url,
                                     data={'mail': mail, 'passwd': password}, headers={'Cookie': auth_cookie})
     except Exception as e:

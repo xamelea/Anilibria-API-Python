@@ -10,7 +10,7 @@ this repository has a two parts:
 ## [api.py](https://github.com/xamelea/AnilibriaAPIv3Python/blob/master/anilibriaAPI3/api.py)
 This file contains main methods to do main activities :3
 ## [auth.py](https://github.com/xamelea/AnilibriaAPIv3Python/blob/master/anilibriaAPI3/auth.py)
-This file contains main method `auth()` that makes(verifying) authorization and creating *"session"* file
+This file contains main method `auth()` that makes authorization(or verifying) and creating *"session"* file
 #### *Session* file
 This file creates after use `auth()` method and contains **sessionId** and **cookie name** for check session expiring status
 ## [config.py](https://github.com/xamelea/AnilibriaAPIv3Python/blob/master/anilibriaAPI3/config.py)
