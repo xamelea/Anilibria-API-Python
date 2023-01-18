@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>792</width>
+    <height>613</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TEST_API</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="start_button">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>480</y>
+      <width>231</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>start</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="request_type">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>331</width>
+      <height>541</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="request_input">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>50</y>
+      <width>391</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>30</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>request</string>
+    </property>
+   </widget>
+   <widget class="QListView" name="response">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>80</y>
+      <width>401</width>
+      <height>391</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>792</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu0">
+    <property name="title">
+     <string>0</string>
+    </property>
+    <addaction name="start_button_2"/>
+   </widget>
+   <addaction name="menu0"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="start_button_2">
+   <property name="text">
+    <string>requestApi</string>
+   </property>
+   <property name="toolTip">
+    <string>requests to api</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
