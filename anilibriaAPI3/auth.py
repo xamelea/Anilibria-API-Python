@@ -1,21 +1,7 @@
 import requests
 import json
-from config import auth_url
+from config import auth_url, password, mail
 import os
-
-if __name__ == '__main__':
-    password = 'string'
-    mail = 'string'
-    print('Setup \n input your e-mail from anilibria account')
-    input(mail + ':')
-    print('input your password from anilibria account')
-    input(password + ':')
-
-    os.environ['AUTH_MAIL'] = mail
-    os.environ['AUTH_PASSWORD'] = password
-
-mail = os.environ['AUTH_MAIL']
-password = os.environ['AUTH_PASSWORD']
 
 
 def connect():
