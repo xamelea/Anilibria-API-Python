@@ -10,25 +10,16 @@ import os
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import requests
+from anilibriaAPI3.api import *
+import tester_api_wrapper
+import anilibriaAPI3.api as apix
 
 
 class Ui_MainWindow(object):
-    def __init__(self):
-        self.start_button_2 = None
-        self.menu0 = None
-        self.statusbar = None
-        self.response = None
-        self.menubar = None
-        self.label = None
-        self.request_input = None
-        self.request_type = None
-        self.centralwidget = None
-        self.start_button = None
+    request_input = None
 
-    def clicked_start(self):
-        response = requests.get(url='https://api.anilibria.tv/v3/title', params={'code': 'kizumonogatari-iii-reiketsu-hen'})
-        print(os.environ['AUTH_MAIL'])
+    def __init__(self):
+        pass
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -47,7 +38,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(370, 30, 55, 16))
         self.label.setObjectName("label")
-        self.response = QtWidgets.QListView(self.centralwidget)
+        self.response = QtWidgets.QListWidget(self.centralwidget)
         self.response.setGeometry(QtCore.QRect(370, 80, 401, 391))
         self.response.setObjectName("response")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -68,9 +59,23 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.request_type.addItem('get_title()')
-
+        self.all_requests_init()
         self.start_button.clicked.connect(self.clicked_start)
+
+    def clicked_start(self):
+        try:
+            func = getattr(apix, str(self.request_type.currentItem().text()))
+            self.response.addItem(str(func(self.request_input.text())))
+
+        except Exception:
+            pass
+
+        
+
+    def all_requests_init(self):
+        temp = tester_api_wrapper.get_functions(apix)
+        for i in temp:
+            self.request_type.addItem(i)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

@@ -1,7 +1,6 @@
 import requests
 import json
-from config import auth_url, password, mail
-import os
+from anilibriaAPI3.config import auth_url, password, mail
 
 
 def connect():
